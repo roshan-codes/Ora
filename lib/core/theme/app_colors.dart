@@ -4,6 +4,7 @@ class AppColors {
   // Main brand accent
   static const Color orange = Color(0xFFFF5C28);
   static const Color orangeLight = Color(0xFFFF7A4D);
+  static const Color orangeDark = Color(0xFFE04818);
 
   // Backgrounds
   static const Color screenBackground = Color(0xFFF3F3F5);
@@ -21,5 +22,10 @@ class AppColors {
   static const Color unselectedIcon = Color(0xFF9E9E9E);
   static const Color radioBorder = Color(0xFFD4D4D8);
   static const Color pauseButtonBg = Color(0xFFEAEAEF);
+  static const Color switchTrackInactive = Color(0xFFE5E5EA);
+
+  // Status Colors
+  static const Color errorRed = Color(0xFFFF3B30);
+  static const Color successGreen = Color(0xFF34C759);
 }
 

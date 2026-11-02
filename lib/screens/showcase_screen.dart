@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
+import '../core/theme/app_colors.dart';
 import '../widgets/phone_frame.dart';
-import 'world_clock_screen.dart';
-import 'stopwatch_screen.dart';
-import 'sleep_timer_screen.dart';
+import '../features/world_clock/screens/world_clock_screen.dart';
+import '../features/world_clock/controllers/world_clock_controller.dart';
+import '../features/stopwatch/screens/stopwatch_screen.dart';
+import '../features/stopwatch/controllers/stopwatch_controller.dart';
+import '../features/sleep_timer/screens/sleep_timer_screen.dart';
+import '../features/sleep_timer/controllers/sleep_timer_controller.dart';
 
 class ShowcaseScreen extends StatelessWidget {
+  final WorldClockController worldClockController;
+  final StopwatchController stopwatchController;
+  final SleepTimerController sleepTimerController;
   final ValueChanged<int>? onSelectScreen;
 
   const ShowcaseScreen({
     super.key,
+    required this.worldClockController,
+    required this.stopwatchController,
+    required this.sleepTimerController,
     this.onSelectScreen,
   });
 
@@ -27,31 +36,31 @@ class ShowcaseScreen extends StatelessWidget {
             children: [
               // Screen 1: World Clock
               GestureDetector(
-                onTap: () => onSelectScreen?.call(0),
-                child: const PhoneFrame(
+                onTap: () => onSelectScreen?.call(1),
+                child: PhoneFrame(
                   width: 350,
                   height: 720,
-                  child: WorldClockScreen(),
+                  child: WorldClockScreen(controller: worldClockController),
                 ),
               ),
 
               // Screen 2: StopWatch
               GestureDetector(
-                onTap: () => onSelectScreen?.call(1),
-                child: const PhoneFrame(
+                onTap: () => onSelectScreen?.call(2),
+                child: PhoneFrame(
                   width: 350,
                   height: 720,
-                  child: StopwatchScreen(),
+                  child: StopwatchScreen(controller: stopwatchController),
                 ),
               ),
 
               // Screen 3: Sleep Timer
               GestureDetector(
-                onTap: () => onSelectScreen?.call(2),
-                child: const PhoneFrame(
+                onTap: () => onSelectScreen?.call(3),
+                child: PhoneFrame(
                   width: 350,
                   height: 720,
-                  child: SleepTimerScreen(),
+                  child: SleepTimerScreen(controller: sleepTimerController),
                 ),
               ),
             ],
@@ -61,4 +70,3 @@ class ShowcaseScreen extends StatelessWidget {
     );
   }
 }
-

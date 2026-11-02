@@ -52,8 +52,7 @@ class _OraAppState extends State<OraApp> {
     _alarmController = AlarmController();
     _worldClockController = WorldClockController();
     _stopwatchController = StopwatchController();
-    _sleepTimerController =
-        SleepTimerController(alarmController: _alarmController);
+    _sleepTimerController = SleepTimerController(alarmController: _alarmController);
     _bedtimeController = BedtimeController(alarmController: _alarmController);
     _qaEngine = QAEngine.instance;
   }
@@ -97,8 +96,7 @@ class _OraAppState extends State<OraApp> {
             return AlarmRingingScreen(
               alarm: ringingAlarm,
               onStop: () => _alarmController.stopRinging(),
-              onSnooze: (mins) =>
-                  _alarmController.snoozeRinging(overrideMinutes: mins),
+              onSnooze: (mins) => _alarmController.snoozeRinging(overrideMinutes: mins),
             );
           }
 
